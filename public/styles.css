@@ -1,0 +1,145 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Karla", sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background-color: hsl(204, 43%, 93%);
+  height: 100vh;
+}
+
+.container {
+  box-shadow: 0.5rem -0.5rem 2rem rgba(0, 0, 0, 0.1);
+  display: grid;
+  border-radius: 0.5rem;
+  overflow: scroll;
+  width: 660px;
+  height: 500px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  background-color: white;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+    "top top"
+    "left right";
+}
+
+.container::-webkit-scrollbar {
+  display: none;
+}
+
+.top {
+  padding: 2.5rem;
+  grid-area: top;
+}
+
+.top h1 {
+  color: hsl(179, 62%, 43%);
+  margin-bottom: 1.5rem;
+}
+
+.top h2 {
+  color: hsl(71, 73%, 54%);
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.top p {
+  color: hsl(218, 22%, 67%);
+  line-height: 1.6rem;
+}
+
+.left {
+  padding: 2.5rem;
+  color: white;
+  grid-area: left;
+  background-color: hsl(179, 62%, 43%);
+}
+
+.left h1 {
+  font-size: 1.3rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+
+.price {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.8rem;
+}
+
+.price h2 {
+  font-size: 2rem;
+}
+
+.price p {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.left p:not(.price p) {
+  font-size: 0.95rem;
+  color: hsl(204, 43%, 93%);
+  margin-bottom: 1.4rem;
+}
+
+.left button {
+  border: none;
+  box-shadow: 0.5rem 0.5rem 2rem rgba(0, 0, 0, 0.2);
+  border-radius: 0.3rem;
+  color: white;
+  background-color: hsl(71, 73%, 54%);
+  height: 27%;
+  width: 100%;
+}
+
+.right {
+  padding: 2.5rem;
+  color: white;
+  grid-area: right;
+  background-color: #4abdbd;
+}
+
+.right h1 {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.right p {
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 0.2rem;
+}
+
+@media screen and (max-width: 700px) {
+  .container {
+    position: relative;
+    top: -2rem;
+    width: 90vw;
+    min-height: 80svh;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+      "top"
+      "left"
+      "right";
+  }
+
+  .top {
+    padding: 2rem;
+  }
+
+  .left {
+    padding: 2rem 2rem 4rem;
+  }
+
+  .bottom {
+    padding: 2rem;
+  }
+}
